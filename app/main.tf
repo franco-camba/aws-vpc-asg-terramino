@@ -9,8 +9,8 @@ provider "aws" {
 }
 
 data "tfe_outputs" "vpc" {
-  organization = "alisdair"
-  workspace = "terramino-vpc"
+  organization = "fcamba-org"
+  workspace = "aws-vpc-Dev"
 }
 
 data "aws_ami" "amazon-linux" {
