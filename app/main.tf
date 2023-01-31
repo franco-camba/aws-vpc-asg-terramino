@@ -73,6 +73,8 @@ resource "aws_lb_listener" "terramino" {
   }
 }
 
+#test
+
 resource "aws_lb_target_group" "terramino" {
   name     = "terramino"
   port     = 80
