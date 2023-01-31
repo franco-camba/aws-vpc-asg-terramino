@@ -8,8 +8,6 @@ provider "aws" {
   }
 }
 
-# adding a sneaky comment here
-
 data "tfe_outputs" "vpc" {
   organization = "fcamba-org"
   workspace = "aws-vpc-Prod"
