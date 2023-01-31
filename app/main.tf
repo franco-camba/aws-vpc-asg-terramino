@@ -1,5 +1,6 @@
 provider "aws" {
-  region = "us-east-2"
+  //region = "us-east-2"
+  region = "eu-west-1" # Prod is in Ireland
 
   default_tags {
     tags = {
@@ -10,7 +11,7 @@ provider "aws" {
 
 data "tfe_outputs" "vpc" {
   organization = "fcamba-org"
-  workspace = "aws-vpc-Dev"
+  workspace = "aws-vpc-Prod"
 }
 
 data "aws_ami" "amazon-linux" {
@@ -26,8 +27,8 @@ data "aws_ami" "amazon-linux" {
 resource "aws_launch_configuration" "terramino" {
   name_prefix     = "terramino-"
   image_id        = data.aws_ami.amazon-linux.id
-  instance_type   = "t2.micro"
-  //instance_type   = "t2.small"
+  //instance_type   = "t2.micro"
+  instance_type   = "t2.small"
   user_data       = file("${path.module}/user-data.sh")
   security_groups = [aws_security_group.terramino_instance.id]
 
