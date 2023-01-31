@@ -8,5 +8,5 @@ terraform {
 }
 
 provider "tfe" {
-  version  = "~> 0.41.0"
+  version  = "~> 0.38.0"
 }
