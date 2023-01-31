@@ -6,3 +6,7 @@ terraform {
     }
   }
 }
+
+provider "tfe" {
+  version  = "~> 0.38.0"
+}

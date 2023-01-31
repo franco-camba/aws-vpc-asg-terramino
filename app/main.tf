@@ -9,8 +9,8 @@ provider "aws" {
 }
 
 data "tfe_outputs" "vpc" {
-  organization = "alisdair"
-  workspace = "terramino-vpc"
+  organization = "fcamba-org"
+  workspace = "aws-vpc-Dev"
 }
 
 data "aws_ami" "amazon-linux" {
@@ -27,6 +27,7 @@ resource "aws_launch_configuration" "terramino" {
   name_prefix     = "terramino-"
   image_id        = data.aws_ami.amazon-linux.id
   instance_type   = "t2.micro"
+  //instance_type   = "t2.small"
   user_data       = file("${path.module}/user-data.sh")
   security_groups = [aws_security_group.terramino_instance.id]
 
@@ -72,6 +73,8 @@ resource "aws_lb_listener" "terramino" {
     target_group_arn = aws_lb_target_group.terramino.arn
   }
 }
+
+#test
 
 resource "aws_lb_target_group" "terramino" {
   name     = "terramino"
