@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-2"
+  region = "eu-west-1" # Prod is in Ireland
 
   default_tags {
     tags = {
@@ -10,7 +10,7 @@ provider "aws" {
 
 data "tfe_outputs" "vpc" {
   organization = "fcamba-org"
-  workspace = "aws-vpc-Dev"
+  workspace = "aws-vpc-Prod"
 }
 
 data "aws_ami" "amazon-linux" {
