@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-2" # Prod is in Ireland
+  region = "us-east-2" # Prod is in Ireland Dev is in Ohio
 
   default_tags {
     tags = {
