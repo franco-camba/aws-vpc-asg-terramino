@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "eu-west-1" # Prod is in Ireland
+  region = "us-east-2" # Prod is in Ireland
 
   default_tags {
     tags = {
