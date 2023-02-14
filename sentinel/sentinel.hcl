@@ -5,3 +5,7 @@ policy "restrict-aws-instances-type" {
 policy "enforce-aws-instance-tags" {
   enforcement_level = "advisory"
 }
+
+policy "cost-increment" {
+  enforcement_level = "soft-mandatory"
+}
